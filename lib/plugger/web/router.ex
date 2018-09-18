@@ -2,6 +2,8 @@ defmodule Plugger.Web.Router do
   use Plug.Router
 
   plug(:match)
+  plug Plugger.Web.MetricsInstrumenter
+  plug Plugger.Web.MetricsExporter
   plug(:dispatch)
 
   get "/hello" do

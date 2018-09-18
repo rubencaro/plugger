@@ -4,6 +4,10 @@ defmodule Plugger.Application do
   use Application
 
   def start(_type, _args) do
+
+    Plugger.Web.MetricsExporter.setup()
+    Plugger.Web.MetricsInstrumenter.setup()
+
     children = [
       Plug.Adapters.Cowboy2.child_spec(
         scheme: :http,

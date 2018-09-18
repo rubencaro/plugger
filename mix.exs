@@ -23,7 +23,9 @@ defmodule Plugger.MixProject do
   defp deps do
     [
       {:cowboy, "~> 2.0"},
-      {:plug, "~> 1.0"}
+      {:plug, "~> 1.0"},
+      {:prometheus_plugs, "~> 1.1.5"},
+      {:prometheus_ex, "~> 3.0"}
     ]
   end
 end
