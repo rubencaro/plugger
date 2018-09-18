@@ -1,21 +1,11 @@
 # Plugger
 
-**TODO: Add description**
+Reference for Plug-based applications
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `plugger` to your list of dependencies in `mix.exs`:
+Follow [these instructions](https://gist.github.com/rubencaro/6a28138a40e629b06470) to install `asdf` and needed dependencies on your system. Then from inside the project folder run `asdf install` to install fixed versions of Elixir/Erlang for the project. Then `mix deps.get` to get dependencies.
 
-```elixir
-def deps do
-  [
-    {:plugger, "~> 0.1.0"}
-  ]
-end
-```
+## Development
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/plugger](https://hexdocs.pm/plugger).
-
+Run `mix test.watch` to run tests anytime a file is changed. Refer to [its repo](https://github.com/lpil/mix-test.watch) for tweakings.
