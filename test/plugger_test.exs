@@ -1,6 +1,7 @@
 alias Plugger.Web.Router
 
 defmodule PluggerTest do
+  @moduledoc false
   use ExUnit.Case
   use Plug.Test
 
@@ -36,5 +37,21 @@ defmodule PluggerTest do
 
     # Assert contains at least 'http_requests_total' metric
     assert String.contains?(conn.resp_body, "http_requests_total")
+  end
+
+  test "responds 404 to not found" do
+    # Create a test connection
+    conn = conn(:get, "/any")
+
+    # Invoke the plug
+    conn = Router.call(conn, @opts)
+
+    # Assert the response and status
+    assert conn.state == :sent
+    assert conn.status == 404
+  end
+
+  test "start code does not crash" do
+    {:error, {:already_started, _pid}} = Plugger.Application.start(:normal, [])
   end
 end
