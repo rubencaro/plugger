@@ -1,17 +1,19 @@
+alias Plugger.Web.{MetricsExporter, MetricsInstrumenter, Router}
+alias Plug.Adapters.Cowboy2
+
 defmodule Plugger.Application do
   @moduledoc false
 
   use Application
 
   def start(_type, _args) do
-
-    Plugger.Web.MetricsExporter.setup()
-    Plugger.Web.MetricsInstrumenter.setup()
+    MetricsExporter.setup()
+    MetricsInstrumenter.setup()
 
     children = [
-      Plug.Adapters.Cowboy2.child_spec(
+      Cowboy2.child_spec(
         scheme: :http,
-        plug: Plugger.Web.Router,
+        plug: Router,
         options: [port: 4001]
       )
     ]

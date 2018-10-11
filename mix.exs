@@ -26,7 +26,8 @@ defmodule Plugger.MixProject do
       {:plug, "~> 1.0"},
       {:prometheus_plugs, "~> 1.1.5"},
       {:prometheus_ex, "~> 3.0"},
-      {:mix_test_watch, "~> 0.8", only: :dev, runtime: false}
+      {:mix_test_watch, "~> 0.8", only: :dev, runtime: false},
+      {:credo, "~> 0.10.0", only: [:dev, :test], runtime: false}
     ]
   end
 end

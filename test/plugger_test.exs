@@ -1,8 +1,10 @@
+alias Plugger.Web.Router
+
 defmodule PluggerTest do
   use ExUnit.Case
   use Plug.Test
 
-  @opts Plugger.Web.Router.init([])
+  @opts Router.init([])
 
   test "greets the world" do
     assert Plugger.hello() == :world
@@ -13,7 +15,7 @@ defmodule PluggerTest do
     conn = conn(:get, "/hello")
 
     # Invoke the plug
-    conn = Plugger.Web.Router.call(conn, @opts)
+    conn = Router.call(conn, @opts)
 
     # Assert the response and status
     assert conn.state == :sent
@@ -26,7 +28,7 @@ defmodule PluggerTest do
     conn = conn(:get, "/metrics")
 
     # Invoke the plug
-    conn = Plugger.Web.Router.call(conn, @opts)
+    conn = Router.call(conn, @opts)
 
     # Assert the response and status
     assert conn.state == :sent
