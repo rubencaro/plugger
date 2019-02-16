@@ -8,4 +8,4 @@ Follow [these instructions](https://gist.github.com/rubencaro/6a28138a40e629b064
 
 ## Development
 
-Run `mix test.watch` to run tests anytime a file is changed. Refer to [its repo](https://github.com/lpil/mix-test.watch) for tweakings.
+Run `./watch.sh` to run tests anytime a file is changed. See `rerun.sh` for tweakings.
