@@ -7,7 +7,7 @@ ignore_secs=0.25
 clear='false'
 verbose='false'
 ignore_until=$(date +%s.%N)
-excludes='\.git|\.coverage|\.cache|tmp|env'
+excludes='\.git|\.coverage|\.cache|tmp|env|deps|_build'
 cmd=""
 yellow=$(tput setaf 11)
 reset=$(tput sgr0)
@@ -23,10 +23,10 @@ Usage: $(basename $0) [OPTIONS] COMMAND
   -h, --help              Display this help and exit.
   -e, --exclude REGEXP    Don't fire for paths that match given REGEXP.
                               Can be given several times.
-    
+
 Run the given COMMAND, and then every time filesystem changes are
 detected in or below the current directory, run COMMAND again.
-    
+
 Given REGEXPs will be concatenated using OR and passed to 'inotifywait'.
 Any path matching any of those REGEXPs will not be monitored for changes.
 Default excludes are '$excludes'
