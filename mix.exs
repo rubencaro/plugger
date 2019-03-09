@@ -28,7 +28,6 @@ defmodule Plugger.MixProject do
       {:prometheus_plugs, "~> 1.1.5"},
       {:prometheus_ex, "~> 3.0"},
       {:observer_cli, "~> 1.4"},
-      {:distillery, "~> 2.0"},
       {:credo, "~> 1.0", only: [:dev, :test], runtime: false}
     ]
   end
