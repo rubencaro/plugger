@@ -8,7 +8,7 @@ defmodule Plugger.MixProject do
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      aliases: [test: ["test", "credo --strict"]]
+      aliases: [test: ["test --cover", "credo --strict"]]
     ]
   end
 
